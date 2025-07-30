@@ -21,7 +21,7 @@ function App() {
     if (code && window.location.pathname === '/auth/discord/callback') {
       handleDiscordCallback(code);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const checkAuthStatus = () => {
     const token = localStorage.getItem('auth_token');

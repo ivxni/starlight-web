@@ -16,7 +16,6 @@ import {
   faSpinner,
   faArrowRight,
   faQuestionCircle,
-  faDiscord,
   faHome,
   faUsers,
   faChartLine,

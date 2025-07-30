@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DarkVeil from '../components/DarkVeil';
 import logo from '../assets/img/Logo512.png';
 
 const Home = () => {
   return (
     <div className="page">
       <div className="modern-hero">
-        <div className="hero-backdrop"></div>
+        <div className="hero-backdrop">
+          <DarkVeil 
+            hueShift={205}
+            noiseIntensity={0.03}
+            scanlineIntensity={0.00}
+            speed={0.2}
+            scanlineFrequency={0.0}
+            warpAmount={0.1}
+            resolutionScale={1}
+          />
+        </div>
         
         <div className="hero-content-modern">
           <div className="glass-hero-card">

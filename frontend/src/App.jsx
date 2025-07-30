@@ -9,7 +9,7 @@ import logo from './assets/img/Logo512.png';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import AgentLocker from './pages/AgentLocker';
-import StarlightBackground from './components/StarlightBackground';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -105,7 +105,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <StarlightBackground />
+
         <nav className="navbar">
           <div className="nav-container">
             <Link to="/" className="nav-logo">

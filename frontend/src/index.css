@@ -1,0 +1,11 @@
+/* ===== ROOT ENTRY POINT ===== */
+/* 
+  This file serves as the entry point for global styles.
+  Most styling is handled in the SCSS files in the styles directory.
+*/
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

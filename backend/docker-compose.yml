@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: starlight_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: starlight_password
+      MONGO_INITDB_DATABASE: starlight
+    volumes:
+      - mongodb_data:/data/db
+      - ./scripts/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - starlight_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: starlight_backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://admin:starlight_password@mongodb:27017/starlight?authSource=admin
+      - PORT=3001
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    networks:
+      - starlight_network
+    volumes:
+      - ./logs:/app/logs
+
+volumes:
+  mongodb_data:
+
+networks:
+  starlight_network:
+    driver: bridge

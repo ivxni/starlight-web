@@ -1,0 +1,611 @@
+// MINIMAL DESIGN OVERRIDES
+
+// Clean navigation
+.navbar {
+  background: rgba(10, 10, 10, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: var(--shadow-subtle) !important;
+
+  .nav-container {
+    padding: var(--space-2) var(--space-4) !important;
+  }
+
+  .nav-logo {
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.02em !important;
+    text-transform: none !important;
+    background: none !important;
+    -webkit-text-fill-color: unset !important;
+    
+    &::after {
+      display: none !important;
+    }
+    
+    &:hover {
+      color: var(--accent-color) !important;
+    }
+  }
+
+  .nav-menu a {
+    color: var(--text-subtle) !important;
+    padding: var(--space-1) var(--space-3) !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-size: 0.9rem !important;
+    
+    &::before {
+      display: none !important;
+    }
+    
+    &:hover {
+      color: var(--text-primary) !important;
+      background: var(--surface-glass) !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+// Glassmorphism cards
+.card, .feature-card, .tool-card, .stat-card {
+  background: var(--surface-glass) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: var(--shadow-glass) !important;
+}
+
+// Dashboard glassmorphism - Compact layout
+.dashboard {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: var(--space-4) !important;
+  
+  .dashboard-header {
+    margin-bottom: var(--space-4) !important;
+  }
+  
+  .user-stats {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: var(--space-3) !important;
+    margin-bottom: var(--space-4) !important;
+    
+    .stat-card {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: var(--shadow-glass) !important;
+      padding: var(--space-3) !important;
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: var(--shadow-glass), var(--shadow-accent) !important;
+      }
+      
+      .stat-icon {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: var(--space-2) !important;
+        
+        svg {
+          font-size: 1.2rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+      
+      .stat-value {
+        color: var(--text-primary) !important;
+        font-weight: 500 !important;
+        font-size: 1.2rem !important;
+        margin-bottom: var(--space-1) !important;
+      }
+      
+      .stat-label {
+        font-size: 0.8rem !important;
+        color: var(--text-muted) !important;
+      }
+    }
+  }
+  
+  .dashboard-tools {
+    margin-bottom: var(--space-4) !important;
+    
+    .tools-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      gap: var(--space-3) !important;
+    }
+    
+    .tool-card {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: var(--shadow-glass) !important;
+      padding: var(--space-3) !important;
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: var(--shadow-glass), var(--shadow-accent) !important;
+      }
+      
+      .tool-icon {
+        background: rgba(255, 255, 255, 0.05) !important;
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: var(--space-2) !important;
+        
+        svg {
+          font-size: 1.2rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+      
+      .tool-name {
+        font-size: 1rem !important;
+        margin-bottom: var(--space-1) !important;
+      }
+      
+      .tool-description {
+        font-size: 0.8rem !important;
+        color: var(--text-muted) !important;
+        margin-bottom: var(--space-2) !important;
+      }
+    }
+  }
+  
+  .dashboard-actions {
+    .actions-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+      gap: var(--space-2) !important;
+    }
+    
+    .action-card {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding: var(--space-2) var(--space-3) !important;
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+      }
+      
+      .action-icon {
+        width: 28px !important;
+        height: 28px !important;
+        
+        svg {
+          font-size: 1rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+      
+      .action-label {
+        font-size: 0.8rem !important;
+        color: var(--text-secondary) !important;
+      }
+    }
+  }
+  
+  .activity-log {
+    .activity-item {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-left: 2px solid var(--accent-subtle) !important;
+      box-shadow: var(--shadow-soft) !important;
+      padding: var(--space-2) var(--space-3) !important;
+      margin-bottom: var(--space-2) !important;
+      
+      .activity-icon {
+        background: rgba(255, 255, 255, 0.05) !important;
+        width: 28px !important;
+        height: 28px !important;
+        
+        svg {
+          font-size: 0.9rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+      
+      .activity-content {
+        .activity-description {
+          font-size: 0.85rem !important;
+          color: var(--text-secondary) !important;
+        }
+        
+        .activity-timestamp {
+          font-size: 0.7rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: var(--space-3) !important;
+    
+    .user-stats {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: var(--space-2) !important;
+    }
+    
+    .dashboard-tools .tools-grid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .dashboard-actions .actions-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+}
+
+// Hero section minimal
+.hero {
+  .hero-title {
+    font-weight: 600 !important;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  .hero-subtitle {
+    color: var(--text-muted) !important;
+  }
+}
+
+// Button minimal style
+.btn {
+  &--primary {
+    background: var(--surface-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-primary) !important;
+    
+    &::before {
+      display: none !important;
+    }
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: var(--accent-subtle) !important;
+      box-shadow: var(--shadow-soft) !important;
+    }
+  }
+  
+  &--secondary {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--text-secondary) !important;
+    
+    &:hover {
+      background: var(--surface-glass) !important;
+      color: var(--text-primary) !important;
+    }
+  }
+}
+
+// Agent Locker UI - Glassmorphism  
+.agent-locker {
+  .login-card, .main-panel {
+    background: var(--surface-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: var(--shadow-glass) !important;
+  }
+}
+
+// Login Section - Secure Account Connection Card
+.login-section {
+  .login-container {
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    
+    .login-title {
+      color: var(--text-primary) !important;
+      font-weight: 500 !important;
+      text-align: center !important;
+      margin-bottom: var(--space-2) !important;
+    }
+    
+    .login-subtitle {
+      color: var(--text-muted) !important;
+      text-align: center !important;
+      margin-bottom: var(--space-6) !important;
+    }
+    
+    .login-card {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: var(--shadow-glass) !important;
+      border-radius: var(--radius-lg) !important;
+      padding: var(--space-6) !important;
+      text-align: center !important;
+      
+      .login-icon {
+        color: var(--accent-color) !important;
+        margin-bottom: var(--space-4) !important;
+        opacity: 0.8 !important;
+      }
+      
+      h3 {
+        color: var(--text-primary) !important;
+        font-weight: 500 !important;
+        font-size: 1.3rem !important;
+        margin-bottom: var(--space-3) !important;
+      }
+      
+      p {
+        color: var(--text-secondary) !important;
+        line-height: 1.6 !important;
+        margin-bottom: var(--space-4) !important;
+        font-size: 0.9rem !important;
+      }
+      
+      .login-btn {
+        background: var(--surface-glass) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: var(--text-primary) !important;
+        padding: var(--space-3) var(--space-6) !important;
+        border-radius: var(--radius-md) !important;
+        font-weight: 500 !important;
+        transition: all var(--transition-fast) !important;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.1) !important;
+          border-color: var(--accent-color) !important;
+          box-shadow: var(--shadow-glass), var(--shadow-accent) !important;
+          transform: translateY(-1px) !important;
+        }
+      }
+      
+      .login-disclaimer {
+        color: var(--text-muted) !important;
+        font-size: 0.75rem !important;
+        margin-top: var(--space-4) !important;
+        line-height: 1.4 !important;
+        opacity: 0.8 !important;
+      }
+    }
+  }
+}
+
+// Agent Locker UI continued - Status cards and other components  
+.agent-locker {
+  .status-cards .status-card {
+    background: var(--surface-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: var(--shadow-glass) !important;
+    padding: var(--space-3) !important;
+    
+    .status-icon {
+      color: var(--text-muted) !important;
+      font-size: 1.2rem !important;
+    }
+    
+    .status-value {
+      color: var(--text-primary) !important;
+      font-weight: 500 !important;
+      font-size: 1.1rem !important;
+    }
+    
+    .status-label {
+      color: var(--text-muted) !important;
+      font-size: 0.8rem !important;
+    }
+  }
+  
+  .config-section {
+    background: var(--surface-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: var(--shadow-glass) !important;
+    
+    .priority-item {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+      }
+      
+      &.selected {
+        background: var(--accent-subtle) !important;
+        border-color: var(--accent-color) !important;
+      }
+    }
+  }
+  
+  .control-panel {
+    .btn {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: var(--accent-subtle) !important;
+      }
+      
+      &.btn--success {
+        border-color: rgba(34, 197, 94, 0.3) !important;
+        color: #22c55e !important;
+        
+        &:hover {
+          background: rgba(34, 197, 94, 0.1) !important;
+        }
+      }
+      
+      &.btn--danger {
+        border-color: rgba(239, 68, 68, 0.3) !important;
+        color: #ef4444 !important;
+        
+        &:hover {
+          background: rgba(239, 68, 68, 0.1) !important;
+        }
+      }
+    }
+  }
+}
+
+// Dashboard Quick Actions - Correct class names
+.dashboard {
+  .quick-actions {
+    .actions-grid {
+      gap: var(--space-2) !important;
+    }
+    
+    .action-btn {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: var(--shadow-glass) !important;
+      padding: var(--space-3) !important;
+      border-radius: var(--radius-md) !important;
+      color: var(--text-primary) !important;
+      cursor: pointer !important;
+      transition: all var(--transition-fast) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: var(--space-2) !important;
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        box-shadow: var(--shadow-glass), var(--shadow-accent) !important;
+        transform: translateY(-1px) !important;
+      }
+      
+      svg {
+        font-size: 1.2rem !important;
+        color: var(--accent-color) !important;
+      }
+      
+      span {
+        font-size: 0.8rem !important;
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+      }
+    }
+  }
+  
+  // Recent Activity - Fixed left border and correct structure
+  .recent-activity {
+    h2 {
+      font-size: 1.1rem !important;
+      color: var(--text-primary) !important;
+      font-weight: 500 !important;
+      margin-bottom: var(--space-3) !important;
+    }
+    
+    .activity-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: var(--space-2) !important;
+    }
+    
+    .activity-item {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-left: 3px solid var(--accent-color) !important;
+      box-shadow: var(--shadow-soft) !important;
+      padding: var(--space-3) !important;
+      border-radius: var(--radius-md) !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: var(--space-3) !important;
+      transition: all var(--transition-fast) !important;
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        border-left-color: var(--accent-color) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        transform: translateX(2px) !important;
+      }
+      
+      .activity-icon {
+        width: 32px !important;
+        height: 32px !important;
+        background: rgba(251, 191, 36, 0.1) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        
+        svg {
+          font-size: 0.9rem !important;
+          color: var(--accent-color) !important;
+        }
+      }
+      
+      .activity-info {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+        
+        .activity-text {
+          font-size: 0.85rem !important;
+          color: var(--text-primary) !important;
+          font-weight: 500 !important;
+        }
+        
+        .activity-time {
+          font-size: 0.7rem !important;
+          color: var(--text-muted) !important;
+        }
+      }
+    }
+  }
+}
+
+// General card improvements
+.card, .feature-card {
+  background: var(--surface-glass) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: var(--shadow-glass) !important;
+  border-radius: var(--radius-lg) !important;
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: var(--shadow-glass), var(--shadow-accent) !important;
+  }
+  
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    
+    h3, h4 {
+      color: var(--text-primary) !important;
+      font-weight: 500 !important;
+    }
+  }
+  
+  .card-content {
+    color: var(--text-secondary) !important;
+  }
+}
+
+// App background minimal  
+.app {
+  &::before {
+    opacity: 0.3 !important;
+    background-size: 60px 60px !important;
+  }
+  
+  &::after {
+    opacity: 0.6 !important;
+  }
+}

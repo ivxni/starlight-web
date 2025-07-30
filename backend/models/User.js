@@ -41,6 +41,26 @@ const userSchema = new mongoose.Schema({
   discordRefreshToken: String,
   tokenExpiresAt: Date,
   
+  // Riot Games OAuth tokens (for Agent Locker)
+  riotAccessToken: {
+    type: String,
+    select: false
+  },
+  riotRefreshToken: {
+    type: String,
+    select: false
+  },
+  riotIdToken: {
+    type: String,
+    select: false
+  },
+  riotTokenExpiresAt: {
+    type: Date
+  },
+  riotSubject: {
+    type: String
+  },
+  
   // User preferences
   isActive: {
     type: Boolean,

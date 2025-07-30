@@ -31,27 +31,45 @@ const AgentLocker = () => {
     window.location.href = `${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/auth/riot`;
   };
 
-  // Handle OAuth callback
+  // Handle Riot OAuth callback
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const error = urlParams.get('error');
 
     if (code) {
-      handleOAuthCallback(code);
+      handleRiotOAuthCallback(code);
       // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (error) {
-      console.error('OAuth error:', error);
+      console.error('Riot OAuth error:', error);
       setLoading(false);
     }
 
-    // Check for existing token
-    const existingToken = localStorage.getItem('riot_token');
-    if (existingToken && !user) {
-      fetchUserData(existingToken);
+    // Check for existing Riot connection
+    checkRiotConnection();
+  }, []);
+
+  const checkRiotConnection = async () => {
+    const token = localStorage.getItem('auth_token');
+    if (!token) return;
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/auth/riot/account`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const riotData = await response.json();
+        setUser({ connected: true, ...riotData });
+      }
+    } catch (error) {
+      console.error('Failed to check Riot connection:', error);
     }
-  }, [user]);
+    setLoading(false);
+  };
 
   const handleOAuthCallback = async (code) => {
     setLoading(true);
@@ -150,7 +168,7 @@ const AgentLocker = () => {
               </div>
               <h3>Secure Account Connection</h3>
               <p>
-                Connect your gaming account to configure your automated selection preferences. 
+                Connect your Riot Games account to access the Agent Locker. 
                 Your credentials are processed securely through official OAuth protocols.
               </p>
               <button 

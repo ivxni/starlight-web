@@ -93,7 +93,12 @@ import {
   faTrophy,
   faAward,
   faCrown,
-  faGem
+  faGem,
+  faCompass,
+  faHeadset,
+  faShieldAlt,
+  faBrain,
+  faSlidersH
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -196,5 +201,10 @@ library.add(
   faTrophy,
   faAward,
   faCrown,
-  faGem
+  faGem,
+  faCompass,
+  faHeadset,
+  faShieldAlt,
+  faBrain,
+  faSlidersH
 );

@@ -8,11 +8,16 @@
   --accent-color: #fbbf24;
   
   // Dark Theme Colors
-  --background-primary: #0a0a0a; // Pure Dark
-  --background-secondary: #111827; // Dark Gray
-  --background-tertiary: #1f2937; // Darker Gray
+  --background-primary: #0a0a0a; // Almost Black
+  --background-secondary: #0f0f0f; // Very Dark Gray
+  --background-tertiary: #1a1a1a; // Dark Gray
   --surface: #374151;
   --surface-light: #4b5563;
+  
+  // Glassmorphism
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   
   // Text Colors
   --text-primary: #f9fafb; // Light Gray
@@ -61,6 +66,7 @@
   --space-12: clamp(3rem, 2.4rem + 3vw, 4.5rem);
   --space-16: clamp(4rem, 3.2rem + 4vw, 6rem);
   --space-20: clamp(5rem, 4rem + 5vw, 7.5rem);
+  --space-24: clamp(6rem, 4.8rem + 6vw, 9rem);
   
   // Layout
   --max-width: 1200px;
@@ -196,7 +202,7 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--background-primary);
+  background: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

@@ -1,172 +1,73 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../assets/img/Logo512.png';
 
 const Home = () => {
   return (
     <div className="page">
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">STARLIGHT</h1>
-          <p className="hero-subtitle">Gaming Automation Technology</p>
-          <p className="hero-description">
-            Advanced automation solutions for competitive gaming scenarios.
-            Consistent performance, every time.
-          </p>
-          <Link to="/dashboard" className="btn btn--primary btn--large hero-cta">
-            Explore Solutions
-          </Link>
-        </div>
+      <div className="modern-hero">
+        <div className="hero-backdrop"></div>
         
-        {/* Interactive Demo Section */}
-        <div className="demo-container">
-          <div className="demo-card">
-            <h3>Interactive System Demo</h3>
-            <p>Experience our automation interface</p>
-            <div className="agent-demo">
-              <div className="agent-grid">
-                <div className="agent-slot active" data-agent="primary">
-                  <span className="agent-name">PRIMARY</span>
-                  <div className="lock-indicator">
-                    <FontAwesomeIcon icon="lock" />
-                  </div>
-                </div>
-                <div className="agent-slot" data-agent="secondary">
-                  <span className="agent-name">SECONDARY</span>
-                </div>
-                <div className="agent-slot" data-agent="tertiary">
-                  <span className="agent-name">TERTIARY</span>
-                </div>
-                <div className="agent-slot" data-agent="backup">
-                  <span className="agent-name">BACKUP</span>
-                </div>
+        <div className="hero-content-modern">
+          <div className="glass-hero-card">
+            <div className="hero-left">
+              <div className="hero-logo-container">
+                <img src={logo} alt="STARLIGHT" className="hero-logo-modern" />
+                <div className="logo-glow"></div>
               </div>
-              <p className="demo-status">
-                <span className="status-active">ACTIVE</span> - Selection Locked: PRIMARY
+              
+              <h1 className="hero-title-modern">STARLIGHT</h1>
+              <p className="hero-tagline">Shine bright with STARLIGHT.</p>
+              
+              <div className="hero-divider"></div>
+              
+              <p className="hero-description-modern">
+                Next-generation automation for competitive gaming.
+                <br />
+                <span className="text-accent">Lightning fast. Undetectable. Reliable.</span>
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div className="stats-section">
-        <div className="stats-grid">
-          <div className="stat-card">
-            <div className="stat-number">500+</div>
-            <div className="stat-label">Active Users</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">99.9%</div>
-            <div className="stat-label">Success Rate</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">24/7</div>
-            <div className="stat-label">Support</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">100%</div>
-            <div className="stat-label">Undetected</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Feature Highlights */}
-      <div className="features-section">
-        <h2 className="section-title">Feature Highlights</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FontAwesomeIcon icon="bolt" />
-            </div>
-            <h3>Lightning Fast</h3>
-            <p>Execute selections in milliseconds with optimized automation technology</p>
-          </div>
-                      <div className="feature-card">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon="bullseye" />
-              </div>
-              <h3>100% Accurate</h3>
-              <p>Reliable automated selection with intelligent priority systems</p>
-            </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FontAwesomeIcon icon="shield" />
-            </div>
-            <h3>Stealth Operation</h3>
-            <p>Advanced stealth technology ensures undetectable operation</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FontAwesomeIcon icon="cog" />
-            </div>
-            <h3>Fully Customizable</h3>
-            <p>Configure priority lists and backup options to your preference</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Agent Locker Section */}
-      <div className="product-section">
-        <div className="product-container">
-          <div className="product-info">
-            <h2>Agent Locker System</h2>
-            <h3>Intelligent Selection Automation</h3>
-            <p>
-              Advanced automation technology for instant character selection with 
-              customizable priority lists and intelligent backup systems.
-            </p>
             
-            <div className="feature-list">
-              <div className="feature-item">
-                <span className="feature-check">
-                  <FontAwesomeIcon icon="check" />
-                </span>
-                <span>Priority-based selection logic</span>
+            <div className="hero-right">
+              <div className="hero-actions">
+                <Link to="/agent-locker" className="glass-button glass-button--primary glass-button--large">
+                  <FontAwesomeIcon icon="rocket" />
+                  <span>Launch Agent Locker</span>
+                </Link>
+                <Link to="/dashboard" className="glass-button glass-button--secondary">
+                  <FontAwesomeIcon icon="compass" />
+                  <span>Explore Dashboard</span>
+                </Link>
               </div>
-              <div className="feature-item">
-                <span className="feature-check">
-                  <FontAwesomeIcon icon="check" />
-                </span>
-                <span>Intelligent fallback system</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-check">
-                  <FontAwesomeIcon icon="check" />
-                </span>
-                <span>Lightning-fast automation</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-check">
-                  <FontAwesomeIcon icon="check" />
-                </span>
-                <span>Stealth operation technology</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-demo">
-            <div className="demo-window">
-              <div className="demo-header">
-                <span className="demo-title">STARLIGHT Configuration</span>
-                <span className="demo-status-dot active"></span>
-              </div>
-              <div className="demo-content">
-                <div className="priority-list">
-                  <div className="priority-item priority-1">
-                    <span className="priority-num">1</span>
-                    <span className="agent-name">PRIMARY</span>
-                    <span className="status">LOCKED</span>
+              
+              <div className="hero-stats-grid">
+                <div className="stat-card-mini">
+                  <FontAwesomeIcon icon="users" className="stat-icon" />
+                  <div className="stat-content">
+                    <span className="stat-value">500+</span>
+                    <span className="stat-label">Active Users</span>
                   </div>
-                  <div className="priority-item priority-2">
-                    <span className="priority-num">2</span>
-                    <span className="agent-name">SECONDARY</span>
-                    <span className="status">BACKUP</span>
+                </div>
+                <div className="stat-card-mini">
+                  <FontAwesomeIcon icon="chart-line" className="stat-icon" />
+                  <div className="stat-content">
+                    <span className="stat-value">99.9%</span>
+                    <span className="stat-label">Success Rate</span>
                   </div>
-                  <div className="priority-item priority-3">
-                    <span className="priority-num">3</span>
-                    <span className="agent-name">TERTIARY</span>
-                    <span className="status">BACKUP</span>
+                </div>
+                <div className="stat-card-mini">
+                  <FontAwesomeIcon icon="headset" className="stat-icon" />
+                  <div className="stat-content">
+                    <span className="stat-value">24/7</span>
+                    <span className="stat-label">Live Support</span>
+                  </div>
+                </div>
+                <div className="stat-card-mini">
+                  <FontAwesomeIcon icon="shield-alt" className="stat-icon" />
+                  <div className="stat-content">
+                    <span className="stat-value">100%</span>
+                    <span className="stat-label">Undetected</span>
                   </div>
                 </div>
               </div>
@@ -175,61 +76,199 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Community Reviews */}
-      <div className="reviews-section">
-        <h2 className="section-title">What Users Say</h2>
-        <p className="section-subtitle">Real experiences from our community</p>
+      {/* Features Section */}
+      <div className="modern-features">
+        <div className="section-header-modern">
+          <h2 className="section-title-modern">Why STARLIGHT?</h2>
+          <p className="section-subtitle-modern">Experience the future of gaming automation</p>
+        </div>
         
-        <div className="reviews-grid">
-          <div className="review-card">
-            <div className="review-header">
-              <span className="reviewer-initial">G</span>
-              <div className="reviewer-info">
-                <span className="reviewer-name">GameMaster</span>
-                <span className="review-date">Jan 2025</span>
-              </div>
+        <div className="glass-features-grid">
+          <div className="glass-feature-card">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="bolt" className="feature-icon-modern" />
             </div>
-            <p className="review-text">
-              "Never miss my preferred character again. The automation works flawlessly every time."
-            </p>
+            <h3>Lightning Fast</h3>
+            <p>Sub-10ms response time for instant selections</p>
+            <div className="feature-accent"></div>
           </div>
-
-          <div className="review-card">
-            <div className="review-header">
-              <span className="reviewer-initial">C</span>
-              <div className="reviewer-info">
-                <span className="reviewer-name">CompetitivePlayer</span>
-                <span className="review-date">Jan 2025</span>
-              </div>
+          
+          <div className="glass-feature-card">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="shield-alt" className="feature-icon-modern" />
             </div>
-            <p className="review-text">
-              "Finally consistent character selection every match. The backup system is brilliant!"
-            </p>
+            <h3>Undetectable</h3>
+            <p>Advanced stealth technology keeps you safe</p>
+            <div className="feature-accent"></div>
           </div>
+          
+          <div className="glass-feature-card">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="brain" className="feature-icon-modern" />
+            </div>
+            <h3>Smart AI</h3>
+            <p>Intelligent priority system with auto-fallback</p>
+            <div className="feature-accent"></div>
+          </div>
+          
+          <div className="glass-feature-card">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="sliders-h" className="feature-icon-modern" />
+            </div>
+            <h3>Customizable</h3>
+            <p>Full control over your selection preferences</p>
+            <div className="feature-accent"></div>
+          </div>
+        </div>
+      </div>
 
-          <div className="review-card">
-            <div className="review-header">
-              <span className="reviewer-initial">E</span>
-              <div className="reviewer-info">
-                <span className="reviewer-name">ESportsGamer</span>
-                <span className="review-date">Dec 2024</span>
+      {/* Showcase Section */}
+      <div className="modern-showcase">
+        <div className="section-header-modern">
+          <h2 className="section-title-modern">Agent Locker System</h2>
+          <p className="section-subtitle-modern">See it in action</p>
+        </div>
+        
+        <div className="glass-showcase-container">
+          <div className="glass-showcase-card">
+            <div className="showcase-header">
+              <div className="showcase-status">
+                <div className="status-dot-live"></div>
+                <span>LIVE DEMO</span>
+              </div>
+              <div className="showcase-title">Priority Configuration</div>
+            </div>
+            
+            <div className="showcase-content">
+              <div className="priority-demo-modern">
+                <div className="priority-slot active-slot">
+                  <div className="priority-number">1</div>
+                  <div className="priority-info">
+                    <span className="priority-label">PRIMARY</span>
+                    <span className="priority-status locked">LOCKED</span>
+                  </div>
+                  <div className="priority-indicator"></div>
+                </div>
+                
+                <div className="priority-slot">
+                  <div className="priority-number">2</div>
+                  <div className="priority-info">
+                    <span className="priority-label">SECONDARY</span>
+                    <span className="priority-status">READY</span>
+                  </div>
+                  <div className="priority-indicator"></div>
+                </div>
+                
+                <div className="priority-slot">
+                  <div className="priority-number">3</div>
+                  <div className="priority-info">
+                    <span className="priority-label">TERTIARY</span>
+                    <span className="priority-status">READY</span>
+                  </div>
+                  <div className="priority-indicator"></div>
+                </div>
+              </div>
+              
+              <div className="showcase-features">
+                <div className="showcase-feature">
+                  <FontAwesomeIcon icon="check-circle" className="check-icon" />
+                  <span>Auto-detect selection phase</span>
+                </div>
+                <div className="showcase-feature">
+                  <FontAwesomeIcon icon="check-circle" className="check-icon" />
+                  <span>Instant lock on availability</span>
+                </div>
+                <div className="showcase-feature">
+                  <FontAwesomeIcon icon="check-circle" className="check-icon" />
+                  <span>Smart fallback system</span>
+                </div>
               </div>
             </div>
-            <p className="review-text">
-              "Lightning fast selection automation. Perfect reliability for competitive gaming."
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="modern-testimonials">
+        <div className="section-header-modern">
+          <h2 className="section-title-modern">Community Feedback</h2>
+          <p className="section-subtitle-modern">Trusted by competitive gamers worldwide</p>
+        </div>
+        
+        <div className="glass-testimonials-grid">
+          <div className="glass-testimonial-card">
+            <div className="testimonial-quote">"</div>
+            <p className="testimonial-text">
+              Never miss my main again. The speed is incredible and it works flawlessly every single time.
             </p>
+            <div className="testimonial-author">
+              <div className="author-avatar">R</div>
+              <div className="author-info">
+                <span className="author-name">RadiantPlayer</span>
+                <span className="author-rank">Immortal 3</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="glass-testimonial-card glass-card--accent">
+            <div className="testimonial-quote">"</div>
+            <p className="testimonial-text">
+              Game changer! The priority system ensures I always get my preferred pick or the next best option.
+            </p>
+            <div className="testimonial-author">
+              <div className="author-avatar">A</div>
+              <div className="author-info">
+                <span className="author-name">AceGamer</span>
+                <span className="author-rank">Diamond 2</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="glass-testimonial-card">
+            <div className="testimonial-quote">"</div>
+            <p className="testimonial-text">
+              Professional grade tool. The stealth technology is unmatched and support is always helpful.
+            </p>
+            <div className="testimonial-author">
+              <div className="author-avatar">P</div>
+              <div className="author-info">
+                <span className="author-name">ProPlayer</span>
+                <span className="author-rank">Radiant</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="cta-section">
-        <h2>Ready to Optimize Your Selection?</h2>
-        <p>Join competitive players using automated selection technology</p>
-        <div className="cta-buttons">
-          <Link to="/dashboard" className="btn btn--primary btn--large">
-            View Agent Locker
-          </Link>
+      <div className="modern-cta">
+        <div className="glass-cta-card">
+          <h2 className="cta-title-modern">Ready to Dominate?</h2>
+          <p className="cta-subtitle-modern">
+            Join the elite gamers using STARLIGHT for consistent victories
+          </p>
+          
+          <div className="cta-features-grid">
+            <div className="cta-feature">
+              <FontAwesomeIcon icon="check" className="cta-check" />
+              <span>Instant Setup</span>
+            </div>
+            <div className="cta-feature">
+              <FontAwesomeIcon icon="check" className="cta-check" />
+              <span>24/7 Support</span>
+            </div>
+            <div className="cta-feature">
+              <FontAwesomeIcon icon="check" className="cta-check" />
+              <span>Regular Updates</span>
+            </div>
+          </div>
+          
+          <div className="cta-actions">
+            <Link to="/agent-locker" className="glass-button glass-button--large glass-button--primary">
+              <FontAwesomeIcon icon="gamepad" />
+              <span>Start Now</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

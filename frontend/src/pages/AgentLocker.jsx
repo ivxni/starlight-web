@@ -38,7 +38,7 @@ const AgentLocker = () => {
     const error = urlParams.get('error');
 
     if (code) {
-      handleRiotOAuthCallback(code);
+      handleOAuthCallback(code);
       // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (error) {
@@ -104,28 +104,7 @@ const AgentLocker = () => {
     }
   };
 
-  const fetchUserData = async (token) => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/api/user`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-      } else {
-        // Token invalid, remove it
-        localStorage.removeItem('riot_token');
-      }
-    } catch (error) {
-      console.error('Failed to fetch user data:', error);
-      localStorage.removeItem('riot_token');
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   const handleLogout = () => {
     localStorage.removeItem('riot_token');

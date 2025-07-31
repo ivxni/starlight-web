@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/img/Logo512.png';
 import './Header.scss';
 
 const Header = ({ user, onDiscordLogin, onLogout }) => {

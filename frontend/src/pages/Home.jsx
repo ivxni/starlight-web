@@ -2,20 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DarkVeil from '../components/DarkVeil';
+import Galaxy from '../components/Galaxy';
+import { GlassCard } from '../components/ui';
 import logo from '../assets/img/Logo512.png';
 
 const Home = () => {
   return (
     <div className="page">
-      <div className="modern-hero">
+      {/* Welcome Section */}
+      <div className="welcome-hero">
         <div className="hero-backdrop">
           <DarkVeil 
-            hueShift={205}
-            noiseIntensity={0.03}
+            hueShift={0}
+            noiseIntensity={0.00}
             scanlineIntensity={0.00}
-            speed={0.2}
+            speed={0.5}
             scanlineFrequency={0.0}
-            warpAmount={0.1}
+            warpAmount={0.0}
             resolutionScale={1}
           />
         </div>
@@ -24,12 +27,12 @@ const Home = () => {
           <div className="glass-hero-card">
             <div className="hero-left">
               <div className="hero-logo-container">
-                <img src={logo} alt="STARLIGHT" className="hero-logo-modern" />
+                <img src={logo} alt="starlight" className="hero-logo-modern" />
                 <div className="logo-glow"></div>
               </div>
               
-              <h1 className="hero-title-modern">STARLIGHT</h1>
-              <p className="hero-tagline">Shine bright with STARLIGHT.</p>
+              <h1 className="hero-title-modern">starlight</h1>
+              <p className="hero-tagline">Shine bright with starlight.</p>
               
               <div className="hero-divider"></div>
               
@@ -87,49 +90,82 @@ const Home = () => {
         </div>
       </div>
 
+
+
       {/* Features Section */}
       <div className="modern-features">
+        <div className="features-backdrop">
+          <Galaxy 
+            mouseRepulsion={true}
+            mouseInteraction={true}
+            density={1}
+            glowIntensity={0.1}
+            saturation={0}
+            hueShift={280}
+            speed={0.5}
+            twinkleIntensity={0.01}
+            rotationSpeed={0.05}
+          />
+        </div>
         <div className="section-header-modern">
-          <h2 className="section-title-modern">Why STARLIGHT?</h2>
+          <h2 className="section-title-modern">Why starlight?</h2>
           <p className="section-subtitle-modern">Experience the future of gaming automation</p>
         </div>
         
         <div className="glass-features-grid">
-          <div className="glass-feature-card">
+          <GlassCard className="feature-card-dark">
             <div className="feature-icon-container">
               <FontAwesomeIcon icon="bolt" className="feature-icon-modern" />
             </div>
             <h3>Lightning Fast</h3>
             <p>Sub-10ms response time for instant selections</p>
             <div className="feature-accent"></div>
-          </div>
+          </GlassCard>
           
-          <div className="glass-feature-card">
+          <GlassCard className="feature-card-dark">
             <div className="feature-icon-container">
               <FontAwesomeIcon icon="shield-alt" className="feature-icon-modern" />
             </div>
             <h3>Undetectable</h3>
             <p>Advanced stealth technology keeps you safe</p>
             <div className="feature-accent"></div>
-          </div>
+          </GlassCard>
           
-          <div className="glass-feature-card">
+          <GlassCard className="feature-card-dark">
             <div className="feature-icon-container">
               <FontAwesomeIcon icon="brain" className="feature-icon-modern" />
             </div>
             <h3>Smart AI</h3>
             <p>Intelligent priority system with auto-fallback</p>
             <div className="feature-accent"></div>
-          </div>
+          </GlassCard>
           
-          <div className="glass-feature-card">
+          <GlassCard className="feature-card-dark">
             <div className="feature-icon-container">
               <FontAwesomeIcon icon="sliders-h" className="feature-icon-modern" />
             </div>
             <h3>Customizable</h3>
             <p>Full control over your selection preferences</p>
             <div className="feature-accent"></div>
-          </div>
+          </GlassCard>
+          
+          <GlassCard className="feature-card-dark">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="server" className="feature-icon-modern" />
+            </div>
+            <h3>Cloud Control</h3>
+            <p>Web-based configuration with instant injection</p>
+            <div className="feature-accent"></div>
+          </GlassCard>
+          
+          <GlassCard className="feature-card-dark">
+            <div className="feature-icon-container">
+              <FontAwesomeIcon icon="users" className="feature-icon-modern" />
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Dedicated community and professional assistance</p>
+            <div className="feature-accent"></div>
+          </GlassCard>
         </div>
       </div>
 
@@ -245,6 +281,20 @@ const Home = () => {
               <div className="author-info">
                 <span className="author-name">ProPlayer</span>
                 <span className="author-rank">Radiant</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="glass-testimonial-card">
+            <div className="testimonial-quote">"</div>
+            <p className="testimonial-text">
+              The cloud control panel makes configuration so easy. I can update my settings from anywhere instantly.
+            </p>
+            <div className="testimonial-author">
+              <div className="author-avatar">C</div>
+              <div className="author-info">
+                <span className="author-name">CloudMaster</span>
+                <span className="author-rank">Ascendant 1</span>
               </div>
             </div>
           </div>

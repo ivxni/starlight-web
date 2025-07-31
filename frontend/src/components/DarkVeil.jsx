@@ -84,6 +84,7 @@ export default function DarkVeil({
   resolutionScale = 1,
 }) {
   const ref = useRef(null);
+
   useEffect(() => {
     const canvas = ref.current;
     const parent = canvas.parentElement;
@@ -152,6 +153,7 @@ export default function DarkVeil({
     warpAmount,
     resolutionScale,
   ]);
+
   return (
     <canvas
       ref={ref}

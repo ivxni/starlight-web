@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './components/FontAwesome';
 import './styles/App.scss';
-import logo from './assets/img/Logo512.png';
+import Header from './components/Header';
 
 // Import page components
 import Home from './pages/Home';
@@ -105,57 +104,11 @@ function App() {
   return (
     <Router>
       <div className="app">
-
-        <nav className="navbar">
-          <div className="nav-container">
-            <Link to="/" className="nav-logo">
-              <img src={logo} alt="STARLIGHT" className="nav-logo-img" />
-              <span className="nav-logo-text">STARLIGHT</span>
-            </Link>
-            
-            <ul className="nav-menu">
-              <li><Link to="/" className={window.location.pathname === '/' ? 'active' : ''}>
-                <FontAwesomeIcon icon="home" />
-                <span>Home</span>
-              </Link></li>
-              {user && (
-                <>
-                  <li><Link to="/dashboard" className={window.location.pathname === '/dashboard' ? 'active' : ''}>
-                    <FontAwesomeIcon icon="chart-line" />
-                    <span>Dashboard</span>
-                  </Link></li>
-                  <li><Link to="/agent-locker" className={window.location.pathname === '/agent-locker' ? 'active' : ''}>
-                    <FontAwesomeIcon icon="gamepad" />
-                    <span>Agent Locker</span>
-                  </Link></li>
-                </>
-              )}
-            </ul>
-            
-            <div className="nav-actions">
-              {user ? (
-                <div className="user-menu">
-                  <div className="user-info">
-                    {user.avatarUrl ? (
-                      <img src={user.avatarUrl} alt="User Avatar" className="user-avatar-small" />
-                    ) : (
-                      <FontAwesomeIcon icon="user" />
-                    )}
-                    <span>{user.displayName || user.username}</span>
-                  </div>
-                  <button onClick={handleLogout} className="logout-btn" title="Logout">
-                    <FontAwesomeIcon icon="sign-out-alt" />
-                  </button>
-                </div>
-              ) : (
-                <button onClick={handleDiscordLogin} className="discord-login-btn">
-                  <FontAwesomeIcon icon={['fab', 'discord']} />
-                  <span>Login with Discord</span>
-                </button>
-              )}
-            </div>
-          </div>
-        </nav>
+        <Header 
+          user={user}
+          onDiscordLogin={handleDiscordLogin}
+          onLogout={handleLogout}
+        />
 
         <main className="main-content">
           <Routes>

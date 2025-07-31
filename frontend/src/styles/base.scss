@@ -1,29 +1,29 @@
 // ===== VARIABLES =====
 :root {
-  // Brand Colors - Gaming Theme
-  --primary-color: #fbbf24; // Golden Yellow
-  --primary-dark: #f59e0b;
-  --primary-light: #fef3c7;
-  --secondary-color: #1e3a8a; // Deep Blue
-  --accent-color: #fbbf24;
+  // Brand Colors - Modern Purple Theme
+  --primary-color: #662aff; // Purple
+  --primary-dark: #5122cc;
+  --primary-light: #a78bfa;
+  --secondary-color: #8b5cf6; // Light Purple
+  --accent-color: #662aff;
   
   // Dark Theme Colors
-  --background-primary: #0a0a0a; // Almost Black
-  --background-secondary: #0f0f0f; // Very Dark Gray
-  --background-tertiary: #1a1a1a; // Dark Gray
+  --background-primary: #0a0a0a; // Very Dark
+  --background-secondary: #111827; // Dark Gray
+  --background-tertiary: #1f2937; // Medium Dark
   --surface: #374151;
   --surface-light: #4b5563;
   
-  // Glassmorphism
+  // Glassmorphism - Dark Mode
   --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-border: rgba(102, 42, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   
-  // Text Colors
-  --text-primary: #f9fafb; // Light Gray
-  --text-secondary: #d1d5db; // Medium Gray
+  // Text Colors - Dark Mode
+  --text-primary: #f9fafb; // Light
+  --text-secondary: #d1d5db; // Medium Light
   --text-muted: #9ca3af; // Muted Gray
-  --text-dark: #374151; // For light backgrounds
+  --text-light: #f9fafb; // For dark backgrounds
   
   // Legacy color mappings for compatibility
   --white: #f9fafb;
@@ -202,7 +202,7 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--text-primary);
-  background: #000000;
+  background: var(--background-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

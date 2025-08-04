@@ -30,12 +30,6 @@ const Header = ({ user, onDiscordLogin, onLogout }) => {
                   <span>Dashboard</span>
                 </Link>
               </li>
-              <li>
-                <Link to="/agent-locker" className={location.pathname === '/agent-locker' ? 'active' : ''}>
-                  <FontAwesomeIcon icon="gamepad" />
-                  <span>Agent Locker</span>
-                </Link>
-              </li>
             </>
           )}
         </ul>

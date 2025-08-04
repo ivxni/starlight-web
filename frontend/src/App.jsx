@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './components/FontAwesome';
 import './styles/App.scss';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 // Import page components
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import AgentLocker from './pages/AgentLocker';
+import Home from './pages/Home/Home';
+import Dashboard from './pages/Dashboard/Dashboard';
+import AgentLocker from './pages/AgentLocker/AgentLocker';
 
 
 function App() {
@@ -113,7 +114,7 @@ function App() {
 
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home user={user} />} />
             <Route path="/auth/discord/callback" element={<div>Processing login...</div>} />
             {user ? (
               <>
@@ -125,6 +126,8 @@ function App() {
             )}
           </Routes>
         </main>
+        
+        <Footer />
       </div>
     </Router>
   );

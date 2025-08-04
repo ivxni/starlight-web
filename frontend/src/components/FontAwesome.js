@@ -98,7 +98,14 @@ import {
   faHeadset,
   faShieldAlt,
   faBrain,
-  faSlidersH
+  faSlidersH,
+  faCrosshairs,
+  faChartBar,
+  faUnlock,
+  faCloud,
+  faMicrochip,
+  faPalette,
+  faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -206,5 +213,12 @@ library.add(
   faHeadset,
   faShieldAlt,
   faBrain,
-  faSlidersH
+  faSlidersH,
+  faCrosshairs,
+  faChartBar,
+  faUnlock,
+  faCloud,
+  faMicrochip,
+  faPalette,
+  faGlobe
 );

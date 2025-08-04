@@ -1,0 +1,345 @@
+@import '../../styles/base.scss';
+
+.agentLocker {
+  padding: var(--space-8) 0;
+  min-height: calc(100vh - 160px); // Minus header and footer
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  @include container;
+  max-width: 1200px;
+}
+
+.loadingContainer {
+  min-height: 50vh;
+  @include flex-center;
+  flex-direction: column;
+  gap: var(--space-4);
+  
+  svg {
+    color: var(--primary-color);
+  }
+  
+  p {
+    color: var(--text-secondary);
+  }
+}
+
+// Header
+.header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    opacity: 0.8;
+  }
+}
+
+// Main Grid
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Configuration Section
+.configSection {
+  min-width: 0;
+}
+
+.configCard {
+  h2 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+  }
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+.priorityList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.priorityRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(102, 42, 255, 0.2);
+  }
+}
+
+.priorityNumber {
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 42, 255, 0.1);
+  border: 1px solid rgba(102, 42, 255, 0.2);
+  border-radius: 10px;
+  @include flex-center;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--primary-color);
+}
+
+.agentSelect {
+  background: var(--background-tertiary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: var(--space-3);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  transition: all var(--transition-normal);
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 42, 255, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.statusIndicator {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  
+  svg {
+    font-size: 1.2rem;
+  }
+  
+  .lockedIcon {
+    color: var(--primary-color);
+  }
+  
+  .unlockedIcon {
+    color: var(--text-muted);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.saveButton {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -5px rgba(102, 42, 255, 0.4);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  svg {
+    font-size: 1.1rem;
+  }
+}
+
+// Control Section
+.controlSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.controlCard {
+  h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+    text-align: center;
+  }
+}
+
+.systemToggle {
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.toggleButton {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 14px;
+  color: #ef4444;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  
+  &.active {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -5px currentColor;
+  }
+  
+  svg {
+    font-size: 1.3rem;
+  }
+}
+
+.statusInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all var(--transition-normal);
+  
+  &.active {
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+.activeNotice {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  
+  svg {
+    color: #22c55e;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+}
+
+// Instructions
+.instructionsCard {
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+  }
+}
+
+.instructionsList {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: var(--space-8);
+    margin-bottom: var(--space-3);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: rgba(102, 42, 255, 0.1);
+      border: 1px solid rgba(102, 42, 255, 0.2);
+      border-radius: 50%;
+      @include flex-center;
+      font-weight: 700;
+      font-size: var(--text-xs);
+      color: var(--primary-color);
+    }
+  }
+}

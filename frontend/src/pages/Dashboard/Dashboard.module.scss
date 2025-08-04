@@ -1,0 +1,340 @@
+@import '../../styles/base.scss';
+
+.dashboard {
+  padding: var(--space-8) 0;
+  min-height: calc(100vh - 160px); // Minus header and footer
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  @include container;
+  max-width: 1200px;
+}
+
+.loadingContainer {
+  min-height: 50vh;
+  @include flex-center;
+  flex-direction: column;
+  gap: var(--space-4);
+  
+  svg {
+    color: var(--primary-color);
+  }
+  
+  p {
+    color: var(--text-secondary);
+  }
+}
+
+// Welcome Card
+.welcomeCard {
+  margin-bottom: var(--space-8);
+}
+
+.welcomeContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(102, 42, 255, 0.1);
+  border: 2px solid var(--primary-color);
+  @include flex-center;
+  overflow: hidden;
+  flex-shrink: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  svg {
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+}
+
+.welcomeText {
+  h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0;
+  }
+}
+
+.quickActions {
+  display: flex;
+  gap: var(--space-3);
+  
+  @include mobile {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.actionButton {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(102, 42, 255, 0.1);
+  border: 1px solid rgba(102, 42, 255, 0.2);
+  border-radius: 12px;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  
+  &:hover {
+    background: rgba(102, 42, 255, 0.15);
+    border-color: rgba(102, 42, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px -5px rgba(102, 42, 255, 0.3);
+  }
+  
+  svg {
+    font-size: 1.2rem;
+  }
+}
+
+// Stats Grid
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.statCard {
+  text-align: center;
+  transition: all var(--transition-normal);
+  
+  &:hover {
+    transform: translateY(-3px);
+    
+    .statIcon {
+      transform: scale(1.1);
+      color: var(--primary-light);
+    }
+  }
+}
+
+.statIcon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--space-3);
+  transition: all var(--transition-normal);
+}
+
+.statValue {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+// Main Grid
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-8);
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+// Tools Section
+.toolsSection {
+  min-width: 0;
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.toolCard {
+  transition: all var(--transition-normal);
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  &:hover:not(:has(.toolCardDisabled)) {
+    transform: translateY(-3px);
+    
+    .toolIcon {
+      transform: scale(1.1);
+      background: rgba(102, 42, 255, 0.15);
+    }
+  }
+}
+
+.toolCardDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toolIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-4);
+  background: rgba(102, 42, 255, 0.1);
+  border-radius: 16px;
+  @include flex-center;
+  transition: all var(--transition-normal);
+  
+  svg {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+  }
+}
+
+.toolCard {
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+  
+  p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+  }
+}
+
+.toolStatus {
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  justify-content: center;
+  
+  svg {
+    font-size: 0.875rem;
+  }
+  
+  &:has(.fa-check-circle) {
+    color: #10b981;
+  }
+  
+  &:has(.fa-clock) {
+    color: var(--text-muted);
+  }
+}
+
+// Activity Section
+.activitySection {
+  min-width: 0;
+}
+
+.activityCard {
+  height: 100%;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.activityIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 42, 255, 0.1);
+  border-radius: 10px;
+  @include flex-center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.activityContent {
+  flex: 1;
+  min-width: 0;
+  
+  p {
+    margin: 0 0 var(--space-1);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+  }
+}
+
+.activityTime {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}

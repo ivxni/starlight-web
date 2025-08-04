@@ -1,6 +1,5 @@
 .glass-card {
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
   border-radius: 16px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -17,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%);
+    background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
@@ -29,17 +28,12 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px 0 rgba(102, 42, 255, 0.12);
-    border-color: rgba(102, 42, 255, 0.15);
   }
 }
 
 /* Variants */
 .glass-card--hero {
   border-radius: 24px;
-  
-  &::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(255, 255, 255, 0.08) 100%);
-  }
 }
 
 .glass-card--feature {
